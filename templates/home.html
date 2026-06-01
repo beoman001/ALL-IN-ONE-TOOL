@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Student Toolkit Pro</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<h1>🚀 Student Toolkit Pro</h1>
+
+<div class="card">
+
+<h2>Percentage Calculator</h2>
+
+<form method="POST">
+
+<input type="hidden" name="action" value="percentage">
+
+<input name="obtained" placeholder="Marks Obtained">
+
+<input name="total" placeholder="Total Marks">
+
+<button>Calculate</button>
+
+</form>
+
+{% if percentage %}
+<h3>{{ percentage }}%</h3>
+{% endif %}
+
+</div>
+
+<div class="card">
+
+<h2>CGPA Calculator</h2>
+
+<form method="POST">
+
+<input type="hidden" name="action" value="cgpa">
+
+<input name="marks" placeholder="Percentage">
+
+<button>Convert</button>
+
+</form>
+
+{% if cgpa %}
+<h3>CGPA: {{ cgpa }}</h3>
+{% endif %}
+
+</div>
+
+<div class="card">
+
+<h2>Fuel Cost Calculator</h2>
+
+<form method="POST">
+
+<input type="hidden" name="action" value="fuel">
+
+<input name="distance" placeholder="Distance (KM)">
+
+<input name="mileage" placeholder="Mileage (KM/L)">
+
+<input name="petrol" placeholder="Petrol Price">
+
+<button>Calculate</button>
+
+</form>
+
+{% if fuel_cost %}
+<h3>₹ {{ fuel_cost }}</h3>
+{% endif %}
+
+</div>
+
+<div class="card">
+
+<h2>Car Part Cost Finder</h2>
+
+<form method="POST">
+
+<input type="hidden" name="action" value="part">
+
+<input name="part" placeholder="Example: tyre">
+
+<button>Find Price</button>
+
+</form>
+
+{% if part_price %}
+<h3>{{ part_price }}</h3>
+{% endif %}
+
+</div>
+
+<div class="card">
+
+<h2>AI Study Assistant</h2>
+
+<form method="POST">
+
+<input type="hidden" name="action" value="chat">
+
+<input name="msg" placeholder="Ask a question">
+
+<button>Ask AI</button>
+
+</form>
+
+{% if bot_reply %}
+<h3>{{ bot_reply }}</h3>
+{% endif %}
+
+</div>
+
+</body>
+
+</html>
